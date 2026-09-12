@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova — outfit links</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{
+    --bg:#f6f2ec; --ink:#1d1a17; --muted:#7a7169; --line:#e6ded4;
+    --card:#fffdf9; --accent:#1d1a17; --accent-ink:#fffdf9; --chip:#efe8df;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:520px;margin:0 auto;padding:36px 18px 56px}
+  header{text-align:center;margin-bottom:26px}
+  .avatar{width:92px;height:92px;border-radius:50%;margin:0 auto 12px;
+    background:linear-gradient(145deg,#d9c8b4,#8f7a66);border:3px solid var(--card);
+    box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  h1{margin:0;font-size:24px;letter-spacing:.2px}
+  .handle{color:var(--muted);font-size:14px;margin-top:2px}
+  .tagline{margin:12px 0 0;font-size:15px}
+  .socials{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .socials a{text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;
+    border-radius:999px;background:var(--chip)}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--muted);margin:26px 0 10px}
+  .look{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:16px 16px 12px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+  .look.today{border-color:var(--ink)}
+  .look h2{margin:0;font-size:16px}
+  .look .date{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .items{list-style:none;margin:12px 0 0;padding:0}
+  .items li{margin:0 0 8px}
+  .item{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    text-decoration:none;padding:12px 14px;border-radius:12px;background:var(--accent);
+    color:var(--accent-ink);font-weight:600;font-size:14px;transition:transform .08s}
+  .item:active{transform:scale(.985)}
+  .item .store{font-weight:500;font-size:12px;opacity:.75;white-space:nowrap}
+  .look.archive .item{background:var(--chip);color:var(--ink)}
+  .video{display:inline-block;margin-top:8px;font-size:13px;color:var(--muted)}
+  details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";font-size:18px;color:var(--muted)}
+  details[open] summary::after{content:"–"}
+  footer{margin-top:30px;text-align:center;font-size:12px;color:var(--muted)}
+  .empty{color:var(--muted);text-align:center;padding:30px 0}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#171412;--ink:#f2ece4;--muted:#a1978c;--line:#2c2723;--card:#1f1b18;
+      --accent:#f2ece4;--accent-ink:#171412;--chip:#2a2521}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="avatar" id="avatar"></div>
+    <h1 id="name">Nova</h1>
+    <div class="handle" id="handle"></div>
+    <p class="tagline" id="tagline"></p>
+    <nav class="socials" id="socials"></nav>
+  </header>
+
+  <div class="eyebrow">Today's look</div>
+  <div id="today"></div>
+
+  <div class="eyebrow">Earlier this week</div>
+  <div id="archive"></div>
+
+  <footer id="note"></footer>
+</div>
+
+<script>
+(async function(){
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt = d => { const t = new Date(d + 'T12:00:00'); return isNaN(t) ? esc(d) :
+    t.toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'}); };
+  let data;
+  try { data = await (await fetch('links.json?v=' + Date.now(), {cache:'no-store'})).json(); }
+  catch(e){ document.getElementById('today').innerHTML = '<p class="empty">Links are being updated — check back in a minute.</p>'; return; }
+
+  const p = data.profile || {};
+  document.getElementById('name').textContent = p.name || 'Nova';
+  document.getElementById('handle').textContent = p.handle || '';
+  document.getElementById('tagline').textContent = p.tagline || '';
+  document.getElementById('note').textContent = p.note || '';
+  if (p.avatar) { const a = document.getElementById('avatar'); a.style.background = 'url(' + p.avatar + ') center/cover'; }
+  document.title = (p.name || 'Nova') + ' — outfit links';
+
+  document.getElementById('socials').innerHTML = (data.socials || []).map(s =>
+    `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join('');
+
+  const items = (look, cls) => `<ul class="items">` + (look.items || []).map(i =>
+    `<li><a class="item" href="${esc(i.url)}" target="_blank" rel="noopener sponsored">
+      <span>${esc(i.name)}</span><span class="store">${esc(i.store)}</span></a></li>`).join('') + `</ul>` +
+    (look.video ? `<a class="video" href="${esc(look.video)}" target="_blank" rel="noopener">Watch the video →</a>` : '');
+
+  const looks = (data.looks || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  if (!looks.length) { document.getElementById('today').innerHTML = '<p class="empty">First look coming soon.</p>'; return; }
+
+  const [today, ...rest] = looks;
+  document.getElementById('today').innerHTML =
+    `<section class="look today"><h2>${esc(today.title)}</h2><div class="date">${fmt(today.date)}</div>${items(today)}</section>`;
+
+  document.getElementById('archive').innerHTML = rest.length ? rest.map(l =>
+    `<details class="look archive"><summary><span><h2>${esc(l.title)}</h2><div class="date">${fmt(l.date)}</div></span></summary>${items(l)}</details>`).join('')
+    : '<p class="empty">More looks soon.</p>';
+})();
+</script>
+</body>
+</html>
