@@ -1,82 +1,31 @@
 {
   "profile": {
     "name": "Nova",
-    "handle": "@nova",
+    "handle": "@NovaRespawnsAgain",
     "tagline": "Outfit of the day, every day. Everything I wear, linked below.",
-    "note": "Some links are affiliate links. I may earn a small commission at no cost to you."
+    "note": "Some links are affiliate links. I may earn a small commission at no cost to you. AI-assisted creator."
   },
   "socials": [
     {
       "label": "TikTok",
-      "url": "https://www.tiktok.com/@nova"
+      "url": "https://www.tiktok.com/@NovaRespawnsAgain"
     },
     {
       "label": "Instagram",
-      "url": "https://www.instagram.com/nova"
+      "url": "https://www.instagram.com/NovaRespawnsAgain"
     }
   ],
   "looks": [
     {
-      "id": "2026-09-12",
-      "date": "2026-09-12",
-      "title": "Saturday: oversized blazer + straight jeans",
-      "video": "https://www.tiktok.com/@nova/video/0000000000000000000",
+      "id": "2026-09-13",
+      "date": "2026-09-13",
+      "title": "Sunday: brown denim bomber + white tee + dark jeans",
+      "video": "",
       "items": [
         {
-          "name": "Oversized wool-blend blazer, camel",
-          "store": "Store name",
-          "url": "https://example.com/blazer?ref=nova"
-        },
-        {
-          "name": "High-rise straight jeans, mid wash",
-          "store": "Store name",
-          "url": "https://example.com/jeans?ref=nova"
-        },
-        {
-          "name": "White leather sneakers",
-          "store": "Store name",
-          "url": "https://example.com/sneakers?ref=nova"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-11",
-      "date": "2026-09-11",
-      "title": "Friday: black slip dress + denim jacket",
-      "video": "https://www.tiktok.com/@nova/video/0000000000000000001",
-      "items": [
-        {
-          "name": "Satin slip midi dress, black",
-          "store": "Store name",
-          "url": "https://example.com/dress?ref=nova"
-        },
-        {
-          "name": "Cropped denim jacket",
-          "store": "Store name",
-          "url": "https://example.com/jacket?ref=nova"
-        }
-      ]
-    },
-    {
-      "id": "2026-09-10",
-      "date": "2026-09-10",
-      "title": "Thursday: ribbed knit set",
-      "video": "https://www.tiktok.com/@nova/video/0000000000000000002",
-      "items": [
-        {
-          "name": "Ribbed knit tank, cream",
-          "store": "Store name",
-          "url": "https://example.com/tank?ref=nova"
-        },
-        {
-          "name": "Ribbed knit wide-leg pant, cream",
-          "store": "Store name",
-          "url": "https://example.com/pant?ref=nova"
-        },
-        {
-          "name": "Gold hoop earrings",
-          "store": "Store name",
-          "url": "https://example.com/hoops?ref=nova"
+          "name": "Levi's 80's Bomber, dark brown denim jacket",
+          "store": "Lulus",
+          "url": "https://mavely.app.link/iMMdI5lpp6b"
         }
       ]
     }
