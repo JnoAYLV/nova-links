@@ -3,7 +3,8 @@
     "name": "Nova",
     "handle": "@NovaRespawnsAgain",
     "tagline": "Outfit of the day, every day. Everything I wear, linked below.",
-    "note": "Some links are affiliate links. I may earn a small commission at no cost to you. AI-assisted creator."
+    "note": "Some links are affiliate links. I may earn a small commission at no cost to you. AI-assisted creator.",
+    "avatar": "img/avatar.jpg"
   },
   "socials": [
     {
@@ -21,6 +22,7 @@
       "date": "2026-09-13",
       "title": "Sunday: brown denim bomber + white tee + dark jeans",
       "video": "",
+      "thumb": "img/2026-09-13.jpg",
       "items": [
         {
           "name": "Levi's 80's Bomber, dark brown denim jacket",

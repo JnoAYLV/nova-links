@@ -2,112 +2,146 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nova — outfit links</title>
+<meta name="description" content="Outfit of the day, every day. Everything I wear, linked below.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="icon" href="img/avatar.jpg">
+<meta property="og:title" content="Nova @NovaRespawnsAgain">
+<meta property="og:description" content="Outfit of the day, every day. Everything I wear, linked below.">
+<meta property="og:url" content="https://novarespawnsagain.com/">
+<meta property="og:image" content="https://novarespawnsagain.com/img/2026-09-13.jpg">
+<script>document.documentElement.className+=" js"</script>
 <style>
-  :root{
-    --bg:#f6f2ec; --ink:#1d1a17; --muted:#7a7169; --line:#e6ded4;
-    --card:#fffdf9; --accent:#1d1a17; --accent-ink:#fffdf9; --chip:#efe8df;
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--ink);
-    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
-    -webkit-font-smoothing:antialiased}
-  a{color:inherit}
-  .wrap{max-width:520px;margin:0 auto;padding:36px 18px 56px}
-  header{text-align:center;margin-bottom:26px}
-  .avatar{width:92px;height:92px;border-radius:50%;margin:0 auto 12px;
-    background:linear-gradient(145deg,#d9c8b4,#8f7a66);border:3px solid var(--card);
-    box-shadow:0 6px 18px rgba(0,0,0,.08)}
-  h1{margin:0;font-size:24px;letter-spacing:.2px}
-  .handle{color:var(--muted);font-size:14px;margin-top:2px}
-  .tagline{margin:12px 0 0;font-size:15px}
-  .socials{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-  .socials a{text-decoration:none;font-size:13px;font-weight:600;padding:7px 13px;
-    border-radius:999px;background:var(--chip)}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
-    color:var(--muted);margin:26px 0 10px}
-  .look{background:var(--card);border:1px solid var(--line);border-radius:16px;
-    padding:16px 16px 12px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
-  .look.today{border-color:var(--ink)}
-  .look h2{margin:0;font-size:16px}
-  .look .date{font-size:12.5px;color:var(--muted);margin-top:2px}
-  .items{list-style:none;margin:12px 0 0;padding:0}
-  .items li{margin:0 0 8px}
-  .item{display:flex;align-items:center;justify-content:space-between;gap:12px;
-    text-decoration:none;padding:12px 14px;border-radius:12px;background:var(--accent);
-    color:var(--accent-ink);font-weight:600;font-size:14px;transition:transform .08s}
-  .item:active{transform:scale(.985)}
-  .item .store{font-weight:500;font-size:12px;opacity:.75;white-space:nowrap}
-  .look.archive .item{background:var(--chip);color:var(--ink)}
-  .video{display:inline-block;margin-top:8px;font-size:13px;color:var(--muted)}
-  details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
-  details summary::-webkit-details-marker{display:none}
-  details summary::after{content:"+";font-size:18px;color:var(--muted)}
-  details[open] summary::after{content:"–"}
-  footer{margin-top:30px;text-align:center;font-size:12px;color:var(--muted)}
-  .empty{color:var(--muted);text-align:center;padding:30px 0}
-  @media (prefers-color-scheme: dark){
-    :root{--bg:#171412;--ink:#f2ece4;--muted:#a1978c;--line:#2c2723;--card:#1f1b18;
-      --accent:#f2ece4;--accent-ink:#171412;--chip:#2a2521}
-  }
+:root{--bg:#0b0b0f;--card:#17171e;--line:#2a2a33;--ink:#f4f4f5;--muted:#a1a1aa;--accent:#e11d48;--accent-ink:#fff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%}
+.wrap{max-width:460px;margin:0 auto;padding:28px 14px calc(40px + env(safe-area-inset-bottom))}
+.hero{text-align:center;margin-bottom:8px}
+.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 12px;object-fit:cover;box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--accent)}
+.avatar.none{background:linear-gradient(145deg,#3f3f46,#18181b)}
+h1{margin:0;font-size:23px;font-weight:800;letter-spacing:.2px}
+.handle{margin:2px 0 0;color:var(--muted);font-size:14px}
+.tagline{margin:10px auto 0;max-width:34ch}
+.socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.pill{min-width:116px;padding:10px 18px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:700;font-size:14px;text-decoration:none;text-align:center}
+.pill:active,.tile:active,.shop:active{transform:scale(.98)}
+.eyebrow{margin:24px 2px 10px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.tile{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--card);text-decoration:none;color:#fff;transition:transform .12s}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.85))}
+.cap{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:10px}
+.cap .d{display:block;font-size:12px;font-weight:600;opacity:.92}
+.cap .t{display:block;font-size:13px;font-weight:700;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.6);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tile.big{border-radius:18px}
+.tile.big .cap{padding:16px 16px 18px}
+.tile.big .cap .d{font-size:13px}
+.tile.big .cap .t{font-size:19px;-webkit-line-clamp:3}
+.play{position:absolute;top:12px;right:12px;z-index:1;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5)}
+.play::before{content:"";position:absolute;left:13px;top:10px;border-style:solid;border-width:7px 0 7px 11px;border-color:transparent transparent transparent #fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.empty{color:var(--muted);text-align:center;padding:14px 0;margin:0}
+footer{margin-top:30px;text-align:center;font-size:12px;color:var(--muted)}
+.sheet{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10;visibility:hidden;transition:visibility 0s .3s}
+.scrim{position:absolute;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,.62);opacity:0;transition:opacity .3s}
+.panel{position:absolute;left:0;right:0;bottom:0;max-width:460px;margin:0 auto;max-height:86vh;overflow-y:auto;overscroll-behavior:contain;background:var(--card);border-radius:20px 20px 0 0;padding:8px 16px calc(20px + env(safe-area-inset-bottom));transform:translateY(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.sheet.open,html:not(.js) .sheet:target{visibility:visible;transition-delay:0s}
+.sheet.open .scrim,html:not(.js) .sheet:target .scrim{opacity:1}
+.sheet.open .panel,html:not(.js) .sheet:target .panel{transform:none}
+.grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:4px auto 14px}
+.head{display:flex;gap:12px;align-items:flex-start}
+.mini{width:72px;height:128px;border-radius:8px;object-fit:cover;flex:none}
+.head .txt{flex:1;min-width:0}
+.head .d{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.head h3{margin:3px 0 0;font-size:17px;line-height:1.3}
+.x{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--line);text-decoration:none;font-size:22px;line-height:1}
+.items{list-style:none;margin:16px 0 0;padding:0}
+.items li{padding:12px 0;border-top:1px solid var(--line)}
+.iname{font-weight:700}
+.imeta{margin-top:1px;font-size:13px;color:var(--muted)}
+.shop{display:block;margin-top:10px;padding:13px;border-radius:12px;background:var(--accent);color:var(--accent-ink);text-align:center;font-weight:800;text-decoration:none;transition:transform .12s}
+.watch{display:block;margin-top:4px;padding:12px;border-radius:12px;border:1px solid var(--line);text-align:center;font-weight:700;text-decoration:none}
+.lock,.lock body{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.panel,.scrim,.sheet,.tile,.shop{transition:none}}
+@media (min-width:700px){.wrap{padding-top:48px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="avatar" id="avatar"></div>
-    <h1 id="name">Nova</h1>
-    <div class="handle" id="handle"></div>
-    <p class="tagline" id="tagline"></p>
-    <nav class="socials" id="socials"></nav>
-  </header>
-
-  <div class="eyebrow">Today's look</div>
-  <div id="today"></div>
-
-  <div class="eyebrow">Earlier this week</div>
-  <div id="archive"></div>
-
-  <footer id="note"></footer>
+<main class="wrap">
+<header class="hero">
+<img class="avatar" src="img/avatar.jpg" alt="" width="96" height="96" fetchpriority="high">
+<h1>Nova</h1>
+<p class="handle">@NovaRespawnsAgain</p>
+<p class="tagline">Outfit of the day, every day. Everything I wear, linked below.</p>
+<nav class="socials"><a class="pill" href="https://www.tiktok.com/@NovaRespawnsAgain" target="_blank" rel="noopener">TikTok</a><a class="pill" href="https://www.instagram.com/NovaRespawnsAgain" target="_blank" rel="noopener">Instagram</a></nav>
+</header>
+<h2 class="eyebrow">Latest look</h2>
+<a class="tile big" href="#look-2026-09-13"><img src="img/2026-09-13.jpg" alt="" width="720" height="1280" fetchpriority="high"><span class="cap"><span class="d">Sun, Sep 13</span><span class="t">Sunday: brown denim bomber + white tee + dark jeans</span></span></a>
+<h2 class="eyebrow">More looks</h2>
+<p class="empty">More looks soon.</p>
+<footer>Some links are affiliate links. I may earn a small commission at no cost to you. AI-assisted creator.</footer>
+</main>
+<section class="sheet" id="look-2026-09-13" role="dialog" aria-modal="true" aria-labelledby="look-2026-09-13-t">
+<a class="scrim" href="#close" data-close aria-label="Close"></a>
+<div class="panel">
+<div class="grab" aria-hidden="true"></div>
+<div class="head"><img class="mini" src="img/2026-09-13.jpg" alt="" width="72" height="128" loading="lazy" decoding="async"><div class="txt"><p class="d">Sunday, September 13, 2026</p><h3 id="look-2026-09-13-t">Sunday: brown denim bomber + white tee + dark jeans</h3></div><a class="x" href="#close" data-close aria-label="Close">&times;</a></div>
+<ul class="items">
+<li><div class="iname">Levi&#x27;s 80&#x27;s Bomber, dark brown denim jacket</div><div class="imeta">Lulus</div><a class="shop" href="https://mavely.app.link/iMMdI5lpp6b" target="_blank" rel="sponsored noopener" aria-label="Shop Levi&#x27;s 80&#x27;s Bomber, dark brown denim jacket at Lulus">Shop</a></li>
+</ul>
 </div>
-
+</section>
 <script>
-(async function(){
-  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const fmt = d => { const t = new Date(d + 'T12:00:00'); return isNaN(t) ? esc(d) :
-    t.toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'}); };
-  let data;
-  try { data = await (await fetch('links.json?v=' + Date.now(), {cache:'no-store'})).json(); }
-  catch(e){ document.getElementById('today').innerHTML = '<p class="empty">Links are being updated — check back in a minute.</p>'; return; }
-
-  const p = data.profile || {};
-  document.getElementById('name').textContent = p.name || 'Nova';
-  document.getElementById('handle').textContent = p.handle || '';
-  document.getElementById('tagline').textContent = p.tagline || '';
-  document.getElementById('note').textContent = p.note || '';
-  if (p.avatar) { const a = document.getElementById('avatar'); a.style.background = 'url(' + p.avatar + ') center/cover'; }
-  document.title = (p.name || 'Nova') + ' — outfit links';
-
-  document.getElementById('socials').innerHTML = (data.socials || []).map(s =>
-    `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join('');
-
-  const items = (look, cls) => `<ul class="items">` + (look.items || []).map(i =>
-    `<li><a class="item" href="${esc(i.url)}" target="_blank" rel="noopener sponsored">
-      <span>${esc(i.name)}</span><span class="store">${esc(i.store)}</span></a></li>`).join('') + `</ul>` +
-    (look.video ? `<a class="video" href="${esc(look.video)}" target="_blank" rel="noopener">Watch the video →</a>` : '');
-
-  const looks = (data.looks || []).slice().sort((a,b) => (b.date||'').localeCompare(a.date||''));
-  if (!looks.length) { document.getElementById('today').innerHTML = '<p class="empty">First look coming soon.</p>'; return; }
-
-  const [today, ...rest] = looks;
-  document.getElementById('today').innerHTML =
-    `<section class="look today"><h2>${esc(today.title)}</h2><div class="date">${fmt(today.date)}</div>${items(today)}</section>`;
-
-  document.getElementById('archive').innerHTML = rest.length ? rest.map(l =>
-    `<details class="look archive"><summary><span><h2>${esc(l.title)}</h2><div class="date">${fmt(l.date)}</div></span></summary>${items(l)}</details>`).join('')
-    : '<p class="empty">More looks soon.</p>';
+(function(){
+  var cur = null, pushed = false, root = document.documentElement;
+  function sheetFor(h){ return /^#look-\d{4}-\d{2}-\d{2}$/.test(h || '') ? document.getElementById(h.slice(1)) : null; }
+  function show(el){
+    if (cur === el) return;
+    if (cur) hide();
+    cur = el; el.classList.add('open'); root.classList.add('lock');
+    var x = el.querySelector('.x'); if (x) x.focus({preventScroll: true});
+  }
+  function hide(){
+    if (!cur) return;
+    var el = cur; cur = null;
+    el.classList.remove('open'); el.querySelector('.panel').style.transform = '';
+    root.classList.remove('lock');
+    var t = document.querySelector('a.tile[href="#' + el.id + '"]'); if (t) t.focus({preventScroll: true});
+  }
+  function close(){
+    if (!cur) return;
+    if (pushed) { pushed = false; history.back(); }
+    else { history.replaceState(null, '', location.pathname + location.search); hide(); }
+  }
+  function sync(){ var el = sheetFor(location.hash); if (el) show(el); else hide(); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a') : null; if (!a) return;
+    if (a.classList.contains('tile')) {
+      var h = a.getAttribute('href'), el = sheetFor(h); if (!el) return;
+      e.preventDefault(); history.pushState(null, '', h); pushed = true; show(el);
+    } else if (a.hasAttribute('data-close')) { e.preventDefault(); close(); }
+  });
+  window.addEventListener('popstate', function(){ pushed = false; sync(); });
+  window.addEventListener('hashchange', sync);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  var y0 = null, dy = 0, panel = null;
+  document.addEventListener('touchstart', function(e){
+    var p = e.target.closest ? e.target.closest('.panel') : null; if (!p || p.scrollTop > 0) return;
+    panel = p; y0 = e.touches[0].clientY; dy = 0; p.style.transition = 'none';
+  }, {passive: true});
+  document.addEventListener('touchmove', function(e){
+    if (y0 === null) return; dy = Math.max(0, e.touches[0].clientY - y0);
+    panel.style.transform = 'translateY(' + dy + 'px)';
+  }, {passive: true});
+  document.addEventListener('touchend', function(){
+    if (y0 === null) return; y0 = null; panel.style.transition = '';
+    if (dy > 90) close(); else panel.style.transform = '';
+  });
+  sync();
 })();
 </script>
 </body>
