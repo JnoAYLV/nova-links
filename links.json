@@ -18,6 +18,27 @@
   ],
   "looks": [
     {
+      "id": "2026-09-14",
+      "date": "2026-09-14",
+      "title": "Dress day",
+      "video": "",
+      "thumb": "img/2026-09-14.jpg",
+      "items": [
+        {
+          "name": "Certainly the Sweetest Black Corduroy Button-Front Midi Dress",
+          "store": "Lulus",
+          "price": "$55",
+          "url": "https://www.lulus.com/products/certainly-the-sweetest-black-corduroy-button-front-midi-dress/2501091.html"
+        },
+        {
+          "name": "Reelee Chocolate Square Toe Knee-High Boots",
+          "store": "Lulus",
+          "price": "$59",
+          "url": "https://www.lulus.com/products/reelee-chocolate-square-toe-knee-high-boots/1534796.html"
+        }
+      ]
+    },
+    {
       "id": "2026-09-13",
       "date": "2026-09-13",
       "title": "Sunday: brown denim bomber + white tee + dark jeans",
