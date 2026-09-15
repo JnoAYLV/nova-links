@@ -18,6 +18,39 @@
   ],
   "looks": [
     {
+      "id": "2026-09-15",
+      "date": "2026-09-15",
+      "title": "Ivory knit",
+      "video": "",
+      "thumb": "img/2026-09-15.jpg",
+      "items": [
+        {
+          "name": "Maelis Ivory Ribbed Knit Long Sleeve Boat Neck Top",
+          "store": "Lulus",
+          "price": "$29",
+          "url": "https://www.lulus.com/products/maelis-ivory-ribbed-knit-long-sleeve-boat-neck-top/2857171.html"
+        },
+        {
+          "name": "So Get This Black Wide-Leg Trousers",
+          "store": "Lulus",
+          "price": "$59",
+          "url": "https://www.lulus.com/products/1580096.html"
+        },
+        {
+          "name": "Milo Beige Ballet Flats",
+          "store": "Lulus",
+          "price": "$39",
+          "url": "https://www.lulus.com/products/2844671.html"
+        },
+        {
+          "name": "Oh-So Chic Black Buckle Shoulder Bag",
+          "store": "Lulus",
+          "price": "$49",
+          "url": "https://www.lulus.com/products/2216556.html"
+        }
+      ]
+    },
+    {
       "id": "2026-09-14",
       "date": "2026-09-14",
       "title": "Dress day",
